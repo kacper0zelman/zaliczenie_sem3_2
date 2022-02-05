@@ -1,0 +1,262 @@
+    <!DOCTYPE html>
+<html>
+
+<head>
+    <title>Prezentacja</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <meta http-equiv="pragma" content="no-cache" />
+
+
+</head>
+
+<body>
+    <div class="frame">
+        <div class="head">
+            <div class="top-bar">
+                <a href="index.html">
+                    <button class="button">
+                        <p>Ankieta</p>
+                    </button>
+                </a>
+                <a href="wyniki.php">
+                    <button class="button">
+                        <p>Wyniki</p>
+                    </button>
+                </a>
+                <a href="kontakt.php">
+                    <button class="button">
+                        <p>Kontakt i opis</p>
+                    </button>
+                </a>
+
+            </div>
+            <div class="title">
+                <h1>Ankieta dotycząca opinii absolwenta na temat szkoły oraz planów na przyszłość</h1>
+
+                
+                   <p> Strona składa się z 3 podstron:</p>
+                <ul>
+                    <li><strong>Ankieta</strong> jest anonimowa, dane przesyłane są do bazy danych</li>
+                    <li><strong>Wyniki</strong> dane z anonimowych ankiet są wyświetlane jako wykresy z całego zakresu</li>
+                    <li><strong>Kontakt i opis</strong> umożliwia kontakt przez formularz z administratorem strony</li>
+                </ul>
+
+            </div>
+        </div>
+        <div class="body_bg">
+            <div class="body">
+                <form method="post" action="przeslanie.php" onsubmit="zaznaczenie(event)">
+
+                    <label> <span class="title">W którym roku ukończyłeś/-aś szkołę?  </span>
+                        <input type="number" required name="rok_zak">
+                    </label>
+                    <br />
+
+                    <label>
+                        <span class="title">Imie i nazwisko wychowawcy:</span>
+                        <input  required type="text" name="nazwa_wych"></label>
+
+                    <br />
+
+                    <label>
+                        <span class="title"> Kierunek, który ukończyłem/-am: </span> <input  required type="text" name="kierunek">
+                    </label>
+                    <br>
+
+                    
+
+
+                    <strong> Czy dobrze wspominasz czas spędzony w szkole? </strong><br>
+
+                    <label><input  required type="radio" name="opinia_o_czasie" value="tak"> Tak <br></label>
+                    <label><input  required type="radio" name="opinia_o_czasie" value="trudno powiedzieć"> Trudno powiedzieć<br></label>
+                    <label><input  required type="radio" name="opinia_o_czasie" value="nie"> Nie<br></label>
+
+
+                    <strong id="jumpHere">Powiedz co najlepiej wspominasz:</strong><br>
+
+                    <label><input   type="checkbox" class="cb" name="wspomnienie[]" value="Zaangażowanie nauczycieli">Zaangażowanie nauczycieli<br></label>
+                    <label><input   type="checkbox" class = "cb" name="wspomnienie[]" value="Działania samorządu">Działania Samorządu Uczniowskiego<br></label>
+                    <label><input  type="checkbox" class="cb" name="wspomnienie[]" value="Relacje uczniowskie">Relacje uczniowskie<br></label>
+                    
+                    <input  type="checkbox" class="cb" name="wspomnienie[]" value="inne" id="inne">
+                    
+                    inne
+                    
+                    <input  type="text" name='wspomnienie_inne' id ="wspomnienie_inne" disabled="true"><br>
+
+
+
+                    <strong>Czy polecisz szkołę osobom wybierającym szkołe średnią?</strong><br>
+
+                    <label> <input required type="radio" name="polecenie" value="Tak">Tak<br></label>
+                    <label><input required type="radio" name="polecenie" value="Nie wiem">Nie wiem <br></label>
+                    <label><input required type="radio" name="polecenie" value="Nie">Nie<br></label>
+
+
+
+                    <strong>Co zamierzasz na najbliższą przyszłość?</strong><br>
+
+                    <label><input required type="radio" name="przyszlosc" value="Praca w zawodzie">Praca w zawodzie <br></label>
+                    <label><input required type="radio" name="przyszlosc" value="Praca">Praca <br></label>
+                    <label><input required type="radio" name="przyszlosc" value="Dalsza nauka">Dalsza nauka<br></label>
+                    <label><input required type="radio" name="przyszlosc" value="Brak planów">Brak planów <br></label>
+
+
+
+                    <strong>Jakbyś mógł, zmieniłbyś/abyś coś w szkole
+                        ? Jeśli tak to co?</strong><br>
+
+                    <input required type="radio" name="zmiana" id="zmianatak" value="tak">Tak
+                    <textarea name="zmiana_co" cols="50" rows="3" id="zmiana_co" disabled="true"></textarea> <br />
+                    <input required type="radio" name="zmiana" id="zmiananie" value="nie" >Nie <br>
+
+                    <strong><span class="ocen">Proszę oceń jak dobrze szkoła funkcjonowała w tych obszarach: <br> (w skali od 1 do 5; 1 - bardzo źle, 5 - bardzo dobrze)</span></strong> <br>
+                    <br>
+
+                    <strong>Organizacja planu zajęć</strong><br>
+                    <input required type="range" name="organizacja_planu" step="1" min="1" max="5" id="organizacja" value="1">
+                    <span id="organizacja_value"></span><br>
+
+                    <strong>Kadra nauczycielska</strong><br>
+                    <input required type="range" name="kadra" step="1" min="1" max="5" id="kadra" value="1">
+                    <span id="kadra_value"></span><br>
+
+                    <strong>Oferta zajęć pozalekcyjnych</strong><br>
+                    <input required type="range" name="oferta" step="1" min="1" max="5" id="oferta" value="1">
+                    <span id="oferta_value"></span><br>
+
+                    <strong>Pomoce dydaktyczne <br>i technologie w klasach</strong><br>
+                    <input required type="range" name="pomoce" step="1" min="1" max="5" id="pomoce" value="1">
+                    <span id="pomoce_value"></span><br>
+
+                    <strong>Zajęcia i akcje sportowe</strong><br>
+                    <input required type="range" name="sport" step="1" min="1" max="5" id="sport" value="1">
+                    <span id="sport_value"></span><br>
+
+
+
+
+
+                    <input type="reset"  value="Wyczyść dane">
+                    <input type="submit" id="przeslij" value="Przeslij Ankietę">
+                </form>
+                
+            </div>
+        </div>
+
+    </div>
+
+</body>
+<script>
+    var organizacja = document.getElementById("organizacja");
+    var organizacja_value = document.getElementById("organizacja_value");
+
+    organizacja.oninput  = function() {
+        organizacja_value.innerHTML = this.value;
+    }
+
+    var kadra = document.getElementById("kadra");
+    var kadra_value = document.getElementById("kadra_value");
+
+    kadra.oninput  = function() {
+        kadra_value.innerHTML = this.value;
+    }
+
+    var oferta = document.getElementById("oferta");
+    var oferta_value = document.getElementById("oferta_value");
+
+    oferta.oninput  = function() {
+        oferta_value.innerHTML = this.value;
+    }
+
+    var pomoce = document.getElementById("pomoce");
+    var pomoce_value = document.getElementById("pomoce_value");
+
+    pomoce.oninput  = function() {
+        pomoce_value.innerHTML = this.value;
+    }
+
+    var sport = document.getElementById("sport");
+    var sport_value = document.getElementById("sport_value");
+
+    sport.oninput  = function() {
+        sport_value.innerHTML = this.value;
+    }
+
+
+    var zmianatak = document.getElementById("zmianatak");
+    var zmiananie = document.getElementById("zmiananie");
+    var zmiananame = document.getElementsByName("zmiana");
+
+    var zmiana_co = document.getElementById("zmiana_co");
+    
+    function zmianaftak(){
+        
+        zmiana_co.disabled = false;
+        zmiana_co.style.backgroundColor = "white";
+        
+    }
+    function zmianafnie(){
+        zmiana_co.disabled = true;
+        zmiana_co.style.backgroundColor = "rgb(190, 190, 190)";
+    }
+    
+    
+    zmianatak.addEventListener("click", zmianaftak);
+    zmiananie.addEventListener("click", zmianafnie);
+    
+    
+    var inne = document.getElementById("inne");
+    var inne_co = document.getElementById("wspomnienie_inne")
+    function innef (){
+         if(inne.checked){
+        inne_co.disabled = false;
+            inne_co.style.backgroundColor = "white";
+             
+    }else{
+        inne_co.disabled = true;
+           inne_co.style.backgroundColor = "rgb(190, 190, 190)";
+    }
+    }
+    inne.addEventListener("click", innef); 
+    
+    var przeslij = document.getElementById('przeslij');
+        var czyZaznacz = false;
+        function zaznaczenie(){
+           var checkboxy = document.getElementsByClassName("cb");
+        var zaznaczone = false;
+        for (var i = 0; i<checkboxy.length; i++){
+            console.log(checkboxy[i].value);
+            if(checkboxy[i].checked){
+                zaznaczone = true;
+            }
+        }
+            if(zaznaczone == true){
+                console.log('all guci');
+                
+            }else{
+                
+                alert("proszę zaznaczyć jedną z opcji w kategorii wspomnienie");
+                window.location = "#jumpHere";
+                
+                event.preventDefault();
+                 return false;
+               
+            } 
+        }
+    
+    
+   
+    
+   
+
+</script>
+
+</html>

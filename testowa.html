@@ -1,0 +1,38 @@
+<html>
+<head>
+    
+    </head>
+    <body>
+    <form action="#" method="post" onsubmit="return zaznaczenie(event)">
+        <input type="checkbox" name="cb" value = "tak">Tak  
+        <input type = "checkbox" name="cb" value= "nie">Nie
+        <input type="submit" id="przeslij">
+        </form>
+        <script>
+        var przeslij = document.getElementById('przeslij');
+        function zaznaczenie(){
+           var checkboxy = document.getElementsByName("cb");
+        var zaznaczone = false;
+        for (var i = 0; i<checkboxy.length; i++){
+            console.log(checkboxy[i].value);
+            if(checkboxy[i].checked){
+                zaznaczone = true;
+            }
+        }
+            if(zaznaczone == true){
+                alert('all guci');
+                
+            }else{
+                
+                alert("cos jest niezaznaczone");
+                
+                event.preventDefault();
+                 return false;
+               
+            } 
+        }
+       
+            
+        </script>
+    </body>
+</html>

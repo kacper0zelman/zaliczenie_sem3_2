@@ -1,0 +1,389 @@
+    * {
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+html {
+
+    background-image: url(tlo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+
+}
+body{
+    width: 100%;
+}
+.body_bg{
+    width: 100%;
+    height: 100%;
+}
+.frame {
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+
+
+}
+
+.head {
+    background-image: url(tlo.jpg);
+    /*    border: 1px solid pink;*/
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 70%, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0)));
+    background-attachment: scroll;
+    height: auto;
+    padding-bottom: 20px;
+    color: white;
+
+
+}
+[type="text"], [type = "number"], textarea, [type='email'] {
+    border: none;   
+    border-bottom: 1px solid rgb(190, 190, 190);
+    background: white;
+}
+[disabled = "true"]{
+    background-color:rgb(190, 190, 190);
+    
+}
+.head .top-bar {
+    /*        backdrop-filter: blur(55px);*/
+
+    position: sticky;
+    left: 0;
+    top: 0px;
+    width: 100%;
+    height: 75px;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(54, 54, 54);
+
+}
+
+.head .top-bar .button {
+    height: 100%;
+    width: 100px;
+    margin: 0 1px;
+    border: none;
+
+    transition: 0.3s;
+    background-color: rgba(255, 255, 255, 0);
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.2em;
+    font-weight: bolder;
+    color: rgb(190, 190, 190);
+    transition-timing-function: ease-in-out;
+
+}
+
+.head .top-bar .button:hover {
+
+    background-color: rgba(190, 190, 190, 0.8);
+    cursor: pointer;
+    transform: scale(1.1);
+    color: rgb(54, 54, 54);
+    height: 90%;
+
+}
+
+
+.title > h1,
+.title > p,
+.title > ul,
+li {
+
+    /*    border: 1px solid cyan;   */
+    margin: 0 auto;
+    width: 80%;
+    margin-top: 20px;
+}
+
+.title > p,
+.title > li,
+ul {
+    font-size: 1.3em;
+}
+
+.frame .body_bg {
+    background-color: rgba(120, 120, 120, 0);
+    width: 100%;
+    height: auto;
+    /*    border: 1px solid blue;*/
+
+}
+
+.body {
+    
+    width: 95%;
+    height: 100%;
+    background-color: white;
+    /*    border: red 1px solid;*/
+    z-index: 5;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    margin-bottom: 20px;
+}
+
+form {
+
+    display: block;
+/*    margin: 0 10px;*/
+    width: 100%;
+    justify-content: space-around;
+    margin-left: 10px;
+}
+
+label {
+    /*   align-content: space-around;*/
+    display: block;
+}
+
+label:hover {
+    background-color: rgba(0, 0, 0, 0.09);
+}
+
+span.title {
+    width: 100%;
+    display: inline-block;
+    text-align: left;
+    margin-right: none;
+}
+
+input[type="text"],
+[type="number"], [type='email']{
+   
+    height: 30px;
+      width: 39%;
+}
+
+
+input[type="range"] {
+    -webkit-appearance: none;
+    /* Override default CSS styles */
+    appearance: none;
+    width: 90%;
+    /* Full-width */
+    height: 25px;
+    /* Specified height */
+    background: #d3d3d3;
+    /* Grey background */
+    outline: none;
+    /* Remove outline */
+    opacity: 0.7;
+    /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s;
+    /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+}
+
+textarea {
+    width: 80%;
+}
+
+/* Mouse-over effects */
+input[type="range"]:hover {
+    opacity: 1;
+    /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    /* Override default look */
+    appearance: none;
+    width: 25px;
+    /* Set a specific slider handle width */
+    height: 25px;
+    /* Slider handle height */
+    background: rgb(54, 54, 54);
+    /* Green background */
+    cursor: pointer;
+    /* Cursor on hover */
+}
+
+input[type="range"]::-moz-range-thumb {
+
+    appearance: none;
+    width: 25px;
+    /* Set a specific slider handle width */
+    height: 25px;
+    /* Slider handle height */
+    background: rgb(54, 54, 54);
+    /* Green background */
+    cursor: pointer;
+    /* Cursor on hover */
+}
+
+input[type="submit"],
+input[type="reset"] {
+    width: 90%;
+    height: 40px;
+    display: block;
+    border: none;
+    font-size: 1.3em;
+    font-weight: bold;
+
+    margin-top: 20px;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    background-color: rgba(190, 190, 190, 0.8);
+    cursor: pointer;
+    transform: scale(1.1);
+    color: rgb(54, 54, 54);
+
+
+}
+
+input[type="range"] + span {
+    font-weight: bolder;
+    /*    border: 1px solid pink;*/
+    display: inline-block;
+    position: relative;
+    top: -6px;
+    font-size: 1.2em;
+}
+
+
+.ocen {
+    width: 85%;
+    display: inline-block;
+
+}
+
+@media only screen and (min-width:768px) {
+
+    .head {
+
+        height: 500px;
+        color: white;
+    }
+
+    
+    .head .top-bar {
+        /*        backdrop-filter: blur(55px);*/
+        height: 75px;
+        justify-content: flex-end;
+
+    }
+    
+    
+.head .top-bar .button {
+    
+    width: 150px;
+
+
+}
+
+
+    .button a:any-link {}
+
+    .head {
+        height: auto;
+
+    }
+
+    .title > h1,
+    .title > p,
+    .title > ul,
+    li {
+
+        /*    border: 1px solid cyan;   */
+
+        width: 65%;
+        font: 100%;
+    }
+
+
+    .body {
+        width: 85%;
+
+    }
+
+    form {
+        width: 75%;
+    }
+
+    
+
+    label:hover {
+        background-color: rgba(0, 0, 0, 0.09);
+    }
+
+    span.title {
+        width: 60%;
+    }
+
+
+    input[type="range"] {
+
+        width: 95%;
+        /* Full-width */
+    }
+
+    textarea {
+        width: 85%;
+    }
+
+    input[type="submit"],
+    input[type="reset"] {
+        width: 47.5%;
+        padding: 0;
+        margin: 0;
+        display: inline-block;
+    }
+
+}
+
+@media (min-width: 1300px) {
+
+
+    .body {
+        width: 65%;
+
+    }
+   
+    form {
+        width: 55%;
+        margin: 0 auto;
+        font-size: 1.1em;
+    }
+
+    label:hover {
+        background-color: rgba(0, 0, 0, 0.09);
+    }
+
+    span.title {
+        width: 60%;
+    }
+
+
+    input[type="range"] {
+
+        width: 95%;
+        /* Full-width */
+    }
+
+    textarea {
+        width: 85%;
+    }
+
+    input[type="submit"],
+    input[type="reset"] {
+        width: 47.5%;
+        padding: 0;
+        margin: 0;
+        display: inline-block;
+    }
+
+
+}

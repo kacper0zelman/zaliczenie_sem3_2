@@ -1,0 +1,52 @@
+
+
+form{
+    margin: 0 auto;
+/*    border: 1px solid green;*/
+    
+}
+label,input, textarea{
+    margin: 2px auto;
+    display: block;
+/*    border: pink 1px solid;*/
+    width: 80%;
+    font-weight: bolder;
+}
+input[type='text'], [type='email']{
+    position: relative;
+    width: 70%;
+        
+    background-color: rgb(245, 245, 245);
+/*    background-color: black;*/
+}
+textarea{
+    background-color: rgb(245, 245, 245);
+    margin-bottom: 20px;
+}
+
+@media (min-width: 500px){
+    
+form{
+    margin: 0 auto;
+/*    border: 1px solid green;*/
+    
+}
+label,input, textarea{
+    margin: 2px auto;
+    display: block;
+/*    border: pink 1px solid;*/
+    width: 70%;
+    font-weight: bolder;
+}
+input[type='text']{
+    position: relative;
+/*    left:-15%;*/
+    background-color: rgb(245, 245, 245);
+/*    background-color: black;*/
+}
+textarea{
+    background-color: rgb(245, 245, 245);
+    margin-bottom: 20px;
+}
+
+}

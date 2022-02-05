@@ -1,0 +1,15 @@
+.wykresy{
+/*    border: 1px solid green;*/
+    width: 90%;
+   height: 300px;
+/*    border: 1px solid red;*/
+    margin: 0 auto;
+}
+@media (min-width: 600px){
+    
+    .wykresy{
+        height: 500px;
+/*        border: 1px solid green;    */
+        
+    }
+}

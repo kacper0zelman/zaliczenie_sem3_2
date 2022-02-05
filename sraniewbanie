@@ -1,0 +1,26 @@
+error 
+INSERT INTO ankiety (rok_zak, nazwa_wych, kierunek, opinia_o_czasie, wspomnienie, wspomnienie_1, wspomnienie_2, wspomnienie_3, polecenie, przyszlosc, zmiana, zmiana_co, organizacja_planu, kadra, oferta, pomoce, sport)
+VALUES ('2018', 'Konrad Kruszwil', 'Agrobiznes', 'trudno powiedzieć', 'Zaangażowanie nauczycieli', 'Działania samorządu', 'Relacje uczniowskie', 'brak', 'Nie', 'Dalsza nauka', 'nie', 'nic', '3', '2' '2' '2' '2')
+
+
+-Column count doesn't match value count at row 1
+INSERT INTO ankiety 
+(rok_zak,       '2018',
+nazwa_wych,      'Konrad Kruszwil'   
+kierunek,           'Agrobiznes'
+opinia_o_czasie,    'trudno powiedzieć'
+wspomnienie,        'Zaangażowanie nauczycieli'
+wspomnienie_1,         'Działania samorządu'
+wspomnienie_2,          'Relacje uczniowskie'
+wspomnienie_3,          'brak'
+polecenie,          'Nie'
+przyszlosc,     'Dalsza nauka'
+zmiana,         'nie'
+zmiana_co,  'nic'
+organizacja_planu,  '3'
+kadra,      '2'
+oferta,     '2'
+pomoce,     '2'
+sport          '2'
+) VALUES 
+( , , , , , , , , , , , ,    )
